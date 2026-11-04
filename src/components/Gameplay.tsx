@@ -80,7 +80,7 @@ export default function Gameplay({ level, score, coins, onBack, onComplete }: Pr
 
     function loop(time: number) {
       frame = requestAnimationFrame(loop)
-      if (!width || !height) return
+      if (!ctx || !width || !height) return
       const sim = runtime.current
       const dt = sim.lastTime ? Math.min((time - sim.lastTime) / 1000, .034) : 0
       sim.lastTime = time
